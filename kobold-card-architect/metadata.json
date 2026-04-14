@@ -1,0 +1,5 @@
+{
+  "name": "Kobold Card Architect",
+  "description": "A professional character card generator for KoboldLite and SillyTavern with AI-powered generation and JSON export.",
+  "requestFramePermissions": []
+}
