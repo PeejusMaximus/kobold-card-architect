@@ -1,0 +1,90 @@
+{
+	"components": {
+		"schemas": {
+			"BasicError": {
+				"properties": {
+					"msg": {
+						"type": "string"
+					},
+					"type": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"msg",
+					"type"
+				],
+				"type": "object"
+			},
+			"BasicResult": {
+				"properties": {
+					"result": {
+						"$ref": "#/components/schemas/BasicResultInner"
+					}
+				},
+				"required": [
+					"result"
+				],
+				"type": "object"
+			},
+			"BasicResultInner": {
+				"properties": {
+					"result": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"result"
+				],
+				"type": "object"
+			},
+			"GenerationInput": {
+				"properties": {
+					"max_context_length": {
+						"description": "Maximum number of tokens to send to the model.",
+						"minimum": 1,
+						"type": "integer"
+					},
+					"max_length": {
+						"description": "Number of tokens to generate.",
+						"minimum": 1,
+						"type": "integer"
+					},
+					"prompt": {
+						"description": "This is the submission.",
+						"type": "string"
+					},
+					"rep_pen": {
+						"description": "Base repetition penalty value.",
+						"minimum": 1,
+						"type": "number"
+					},
+					"rep_pen_range": {
+						"description": "Repetition penalty range.",
+						"minimum": 0,
+						"type": "integer"
+					},
+					"temperature": {
+						"description": "Temperature value.",
+						"minimum": 0,
+						"type": "number"
+					},
+					"grammar": {
+						"description": "KoboldCpp ONLY. A string containing the GBNF grammar to use.",
+						"type": "string"
+					}
+				},
+				"required": [
+					"prompt"
+				],
+				"type": "object"
+			}
+		}
+	},
+	"info": {
+		"title": "KoboldCpp API",
+		"description": "KoboldCpp OpenAPI specification. Full spec available at https://lite.koboldai.net/koboldcpp_api",
+		"version": "2025.06.03"
+	},
+	"openapi": "3.0.3"
+}
